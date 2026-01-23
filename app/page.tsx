@@ -1,5 +1,8 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/home/hero";
+import { PainPoints } from "@/components/home/pain-points";
+import { SolutionSection } from "@/components/home/solution-section";
+import { SearchSection } from "@/components/home/search-section";
 
 export const metadata = {
   title: "OpenOrClosed - check shop status",
@@ -11,6 +14,9 @@ export default function Home() {
     <div className="min-h-screen bg-[#eefbf3] font-sans selection:bg-green-100 flex flex-col">
       <Navbar />
       <Hero />
+      {/* <PainPoints />
+      <SolutionSection /> */}
+      <SearchSection />
     </div>
   );
 }
