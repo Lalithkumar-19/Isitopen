@@ -50,7 +50,7 @@ export function AddPlaceModal({ children, trigger }: { children?: React.ReactNod
         setLoading(true);
 
         try {
-            let imageUrl = "";
+            let imageUrl = formData.image;
 
             if (imageFile) {
                 setUploading(true);
