@@ -12,14 +12,14 @@ export function Hero() {
             {/* Left Column: Text & CTA */}
             <div className="relative flex flex-col border-r border-emerald-900/5">
                 {/* Top Section */}
-                <div className="flex-1 p-12 lg:p-20 flex flex-col justify-center max-w-2xl">
+                <div className="flex-1 p-6 md:p-12 lg:p-20 flex flex-col justify-center max-w-2xl">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="text-5xl lg:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-8 tracking-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-8 tracking-tight">
                             Stop Wasting<br />
                             Time on <span className="text-[#1a2c42]">Closed</span><br />
                             <span className="text-[#1a2c42]">Shops.</span>
@@ -57,7 +57,7 @@ export function Hero() {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                     viewport={{ once: true }}
-                    className="border-t border-emerald-900/5 p-12 lg:p-20 bg-[#eefbf3]"
+                    className="border-t border-emerald-900/5 p-6 md:p-12 lg:p-20 bg-[#eefbf3]"
                 >
                     <p className="text-slate-600 mb-6 font-medium">
                         Save time, fuel, and frustration by checking real-time status updates.
@@ -78,7 +78,7 @@ export function Hero() {
             {/* Right Column: Visuals & Stats */}
             <div className="flex flex-col">
                 {/* Top Right: Images */}
-                <div className="flex-1 grid grid-cols-2 gap-8 p-12 lg:p-16 items-center relative overflow-hidden bg-white/30">
+                <div className="flex-1 grid grid-cols-2 gap-4 md:gap-8 p-6 md:p-12 lg:p-16 items-center relative overflow-hidden bg-white/30">
                     {/* Background Gradient Blob */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-green-100/50 rounded-full blur-3xl -z-10"></div>
 
@@ -125,11 +125,13 @@ export function Hero() {
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="border-t border-emerald-900/5 flex"
+                    className="border-t border-emerald-900/5 flex flex-col md:flex-row"
                 >
-                    <div className="bg-[#1a3c28] text-white p-10 flex flex-col justify-center text-center min-w-[200px]">
-                        <span className="text-3xl font-bold mb-1">50+</span>
-                        <span className="text-xs uppercase tracking-wider opacity-80">Active Places</span>
+                    <div className="bg-[#1a3c28] text-white p-6 md:p-10 flex flex-row md:flex-col justify-center items-center text-center w-full md:w-auto md:min-w-[200px]">
+                        <div className="flex flex-col">
+                            <span className="text-3xl md:text-4xl font-bold mb-1">50+</span>
+                            <span className="text-xs uppercase tracking-wider opacity-80">Active Places</span>
+                        </div>
                     </div>
                     <div className="flex-1 bg-white grid grid-cols-3 divide-x divide-slate-100">
                         {[
@@ -137,9 +139,9 @@ export function Hero() {
                             { num: "50+", label: "Cities" },
                             { num: "50+", label: "Users" }
                         ].map((stat, i) => (
-                            <div key={i} className="flex flex-col justify-center items-center p-8">
-                                <span className="text-3xl font-bold text-[#1a2c42] mb-1">{stat.num}</span>
-                                <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold">{stat.label}</span>
+                            <div key={i} className="flex flex-col justify-center items-center p-4 md:p-8">
+                                <span className="text-2xl md:text-3xl font-bold text-[#1a2c42] mb-1">{stat.num}</span>
+                                <span className="text-[10px] md:text-xs uppercase tracking-wider text-slate-500 font-semibold">{stat.label}</span>
                             </div>
                         ))}
                     </div>
