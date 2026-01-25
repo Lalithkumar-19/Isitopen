@@ -8,10 +8,12 @@ import { MapPin, Clock, ArrowLeft, Share2, CheckCircle2, XCircle, AlertTriangle 
 import { toast } from "sonner";
 import dynamic from "next/dynamic";
 
+
 const PlaceMap = dynamic(() => import("@/components/place-map"), {
     ssr: false,
     loading: () => <div className="w-full h-48 bg-slate-100 animate-pulse rounded-2xl"></div>
 });
+
 
 export default function PlaceDetails() {
     const { id } = useParams();

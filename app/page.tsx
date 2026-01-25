@@ -9,7 +9,7 @@ import { AboutSection } from "@/components/home/about-section";
 import { CrowdTrustSection } from "@/components/home/crowd-trust-section";
 
 export const metadata = {
-  title: "OpenOrClosed - check shop status",
+  title: "Isitopen - check shop status",
   description: "Real-time availability checker for local businesses.",
 };
 

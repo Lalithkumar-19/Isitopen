@@ -6,6 +6,8 @@ import { Navbar } from "@/components/navbar";
 import { PlaceCard } from "@/components/place-card";
 import { MapPin, Search as SearchIcon, Loader2, Frown } from "lucide-react";
 
+
+
 function SearchContent() {
     const searchParams = useSearchParams();
     const initialQuery = searchParams.get("q") || "";
