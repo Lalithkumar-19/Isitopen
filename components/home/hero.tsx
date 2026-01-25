@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Hero() {
     return (
@@ -9,30 +13,56 @@ export function Hero() {
             <div className="relative flex flex-col border-r border-emerald-900/5">
                 {/* Top Section */}
                 <div className="flex-1 p-12 lg:p-20 flex flex-col justify-center max-w-2xl">
-                    <h1 className="text-5xl lg:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-8 tracking-tight">
-                        Stop Wasting<br />
-                        Time on <span className="text-[#1a2c42]">Closed</span><br />
-                        <span className="text-[#1a2c42]">Shops.</span>
-                    </h1>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                    >
+                        <h1 className="text-5xl lg:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-8 tracking-tight">
+                            Stop Wasting<br />
+                            Time on <span className="text-[#1a2c42]">Closed</span><br />
+                            <span className="text-[#1a2c42]">Shops.</span>
+                        </h1>
+                    </motion.div>
 
-                    <p className="text-slate-600 text-lg leading-relaxed mb-10 max-w-md">
+                    <motion.p
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="text-slate-600 text-lg leading-relaxed mb-10 max-w-md"
+                    >
                         Check real-time availability of local businesses, government offices, and services before you step out.
-                    </p>
+                    </motion.p>
 
-                    <div>
-                        <Button className="h-14 px-8 text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-none shadow-lg shadow-indigo-500/20 group cursor-pointer">
-                            Check Status
-                            <ChevronRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
-                        </Button>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <Link href="/search">
+                            <Button className="h-14 px-8 text-lg font-semibold bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white rounded-none shadow-lg shadow-emerald-500/20 group cursor-pointer">
+                                Check Status
+                                <ChevronRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </Link>
+                    </motion.div>
                 </div>
 
                 {/* Bottom Left: Quote/Newsletter */}
-                <div className="border-t border-emerald-900/5 p-12 lg:p-20 bg-[#eefbf3]">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    className="border-t border-emerald-900/5 p-12 lg:p-20 bg-[#eefbf3]"
+                >
                     <p className="text-slate-600 mb-6 font-medium">
                         Save time, fuel, and frustration by checking real-time status updates.
                     </p>
-                    <div className="flex w-full max-w-md bg-white p-1 shadow-sm">
+                    {/* <div className="flex w-full max-w-md bg-white p-1 shadow-sm">
                         <input
                             type="text"
                             placeholder="Search for a place..."
@@ -41,8 +71,8 @@ export function Hero() {
                         <button className="bg-[#1a3c28] hover:bg-[#1a3c28]/90 text-white p-3 transition-colors cursor-pointer">
                             <ChevronRight className="size-5" />
                         </button>
-                    </div>
-                </div>
+                    </div> */}
+                </motion.div>
             </div>
 
             {/* Right Column: Visuals & Stats */}
@@ -52,7 +82,13 @@ export function Hero() {
                     {/* Background Gradient Blob */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-green-100/50 rounded-full blur-3xl -z-10"></div>
 
-                    <div className="relative aspect-[3/5] mt-12 shadow-2xl shadow-slate-200">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="relative aspect-[3/5] mt-12 shadow-2xl shadow-slate-200"
+                    >
                         <Image
                             fill
                             src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202101/Republic-Labour-_-Employment-1_1200x768.jpeg?size=690%3A388"
@@ -62,9 +98,15 @@ export function Hero() {
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-xs font-bold text-emerald-800 rounded shadow-sm">
                             OPEN NOW
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="relative aspect-[3/5] mb-12 shadow-2xl shadow-slate-200 bg-gray-100">
+                    <motion.div
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="relative aspect-[3/5] mb-12 shadow-2xl shadow-slate-200 bg-gray-100"
+                    >
                         <Image
                             fill
                             src="https://i.guim.co.uk/img/media/4b1ea5d6577ef7a4640cc54cc0f770c059fa8e95/0_305_5616_3370/master/5616.jpg?crop=none&dpr=1&s=none&width=465"
@@ -74,20 +116,26 @@ export function Hero() {
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-xs font-bold text-red-800 rounded shadow-sm">
                             CLOSED
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Bottom Right: Stats Bar */}
-                <div className="border-t border-emerald-900/5 flex">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="border-t border-emerald-900/5 flex"
+                >
                     <div className="bg-[#1a3c28] text-white p-10 flex flex-col justify-center text-center min-w-[200px]">
-                        <span className="text-3xl font-bold mb-1">10k+</span>
+                        <span className="text-3xl font-bold mb-1">50+</span>
                         <span className="text-xs uppercase tracking-wider opacity-80">Active Places</span>
                     </div>
                     <div className="flex-1 bg-white grid grid-cols-3 divide-x divide-slate-100">
                         {[
                             { num: "24/7", label: "Updates" },
                             { num: "50+", label: "Cities" },
-                            { num: "1M+", label: "Users" }
+                            { num: "50+", label: "Users" }
                         ].map((stat, i) => (
                             <div key={i} className="flex flex-col justify-center items-center p-8">
                                 <span className="text-3xl font-bold text-[#1a2c42] mb-1">{stat.num}</span>
@@ -95,7 +143,7 @@ export function Hero() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </main>
     );

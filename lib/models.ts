@@ -5,6 +5,10 @@ export interface IPlace extends Document {
     category: string;
     city: string;
     area: string;
+    image?: string;
+    lat?: number;
+    lng?: number;
+    googleMapsLink?: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -14,6 +18,10 @@ const PlaceSchema: Schema = new Schema({
     category: { type: String, required: true, enum: ['Medical', 'Bank', 'Office', 'Shop', 'Food', 'Other'] },
     city: { type: String, required: true },
     area: { type: String, required: true },
+    image: { type: String, required: false },
+    lat: { type: Number, required: false },
+    lng: { type: Number, required: false },
+    googleMapsLink: { type: String, required: false },
 }, {
     timestamps: true,
 });
@@ -26,6 +34,7 @@ export interface IStatus extends Document {
     status: 'OPEN' | 'CLOSED';
     updatedBy: 'staff' | 'public';
     updatedAt: Date; // This will handle the auto-expiry logic check
+    createdAt: Date;
 }
 
 const StatusSchema: Schema = new Schema({
