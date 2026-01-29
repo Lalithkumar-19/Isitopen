@@ -4,7 +4,7 @@
 
 Stop guessing and start knowing before you go!
 
-![Project Banner](https://via.placeholder.com/1200x600/10b981/ffffff?text=IsItOpen+Preview)
+![Project Banner](https://github.com/Lalithkumar-19/Isitopen/blob/main/public/banner.png?raw=true)
 
 ## 🚀 Features
 
